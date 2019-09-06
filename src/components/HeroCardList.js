@@ -1,16 +1,17 @@
 import React from "react";
 import HeroCard from "../components/HeroCard";
 import ScrollBox from "./ScrollBox";
+import FlippedCard from "./FlippedCard";
 
-const ManageMembers = function(member) {
-  if (!member.length) {
-    return "loading page";
-  } else {
-    return member.map(x => x.name);
-  }
-};
+//const ManageMembers = function(member) {
+//  if (!member.length) {
+//    return "loading page";
+//  } else {
+//    return member.map(x => x.name);
+//  }
+//};
 
-const HeroCardList = ({ heroes }) => {
+export const HeroCardList = ({ heroes }) => {
   return (
     <ScrollBox>
       {" "}
@@ -27,4 +28,21 @@ const HeroCardList = ({ heroes }) => {
   );
 };
 
-export default HeroCardList;
+export const FlippedCardList = ({ heroes, handleClick }) => {
+  return (
+    <ScrollBox>
+      {" "}
+      {heroes.map((user, i) => {
+        return (
+          <FlippedCard
+            key={i}
+            name={heroes[i].name}
+            appearance={heroes[i].appearance}
+            biography={heroes[i].biography}
+            onClick={handleClick}
+          />
+        );
+      })}
+    </ScrollBox>
+  );
+};

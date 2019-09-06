@@ -15,6 +15,10 @@ const HeroCardWrapper = styled.div`
       background: #222;
       color: #fff;
     `}
+
+  .hero-info-heading {
+    font-size: calc(16px + 0.5vw);
+  }
 `;
 
 export default HeroCardWrapper;
