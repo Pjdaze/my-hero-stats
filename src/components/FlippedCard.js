@@ -1,14 +1,7 @@
 import React from "react";
 import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 
-const FlippedCard = ({
-  name,
-  appearance,
-  biography,
-  flipped,
-  handleClick,
-  flip
-}) => {
+const FlippedCard = ({ name, appearance, biography, onFlipped }) => {
   return (
     <HeroCardWrapper>
       <div className="info">
@@ -19,8 +12,8 @@ const FlippedCard = ({
         <p>{biography.aliases}</p>
         <br />
         <span className="hero-info-heading">{biography.firstAppearance}</span>
-        <button onClick={flip}>Flip Card</button>
       </div>
+      <button onClick={onFlipped}>Flip Card</button>
     </HeroCardWrapper>
   );
 };

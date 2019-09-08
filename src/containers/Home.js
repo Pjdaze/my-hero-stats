@@ -35,10 +35,11 @@ class App extends React.Component {
     this.setState({
       flipped: !this.state.flipped
     });
+    console.log("clicked");
   };
 
   render() {
-    const { heroes, searchField, flipped, handleClick } = this.state;
+    const { heroes, searchField, flipped } = this.state;
 
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())
@@ -52,9 +53,15 @@ class App extends React.Component {
         </header>
         <SearchBox searchChange={this.onSearchChange} />
         {!flipped ? (
-          <HeroCardList heroes={findHeroe.slice(0, 12)} />
+          <HeroCardList
+            onFlipped={this.handleClick}
+            heroes={findHeroe.slice(0, 12)}
+          />
         ) : (
-          <FlippedCardList heroes={findHeroe.slice(0, 12)} />
+          <FlippedCardList
+            onFlipped={this.handleClick}
+            heroes={findHeroe.slice(0, 12)}
+          />
         )}
       </HomeWrap>
     );

@@ -1,14 +1,15 @@
 import React from "react";
 import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 
-const HeroCard = ({ images, name, handleClick, flip }) => {
+const HeroCard = ({ images, name, onFlipped }) => {
   return (
     <HeroCardWrapper>
       <img src={images} alt="heroes" />
       <div className="info">
         <h2>{name}</h2>
-        <button onClick={flip}>Flip Card</button>
       </div>
+
+      <button onClick={onFlipped}>Flip Card</button>
     </HeroCardWrapper>
   );
 };
