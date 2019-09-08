@@ -24,6 +24,7 @@ class App extends React.Component {
         console.log("This is the data form the Heroes API: ", res);
       });
   }
+
   onSearchChange = e => {
     this.setState({
       searchField: e.target.value
@@ -37,7 +38,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { heroes, searchField, flipped } = this.state;
+    const { heroes, searchField, flipped, handleClick } = this.state;
 
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())

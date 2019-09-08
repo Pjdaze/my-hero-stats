@@ -11,7 +11,7 @@ import FlippedCard from "./FlippedCard";
 //  }
 //};
 
-export const HeroCardList = ({ heroes }) => {
+export const HeroCardList = ({ heroes, handleClick }) => {
   return (
     <ScrollBox>
       {" "}
@@ -21,6 +21,7 @@ export const HeroCardList = ({ heroes }) => {
             key={i}
             name={heroes[i].name}
             images={heroes[i].images.lg}
+            flip={handleClick}
           />
         );
       })}
@@ -39,7 +40,7 @@ export const FlippedCardList = ({ heroes, handleClick }) => {
             name={heroes[i].name}
             appearance={heroes[i].appearance}
             biography={heroes[i].biography}
-            onClick={handleClick}
+            flip={handleClick}
           />
         );
       })}
