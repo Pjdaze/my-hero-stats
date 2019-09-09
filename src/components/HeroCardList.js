@@ -14,27 +14,17 @@ import FlippedCard from "./FlippedCard";
 export const HeroCardList = ({ heroes, onFlipped }) => {
   return (
     <ScrollBox>
-      {" "}
       {heroes.map((user, i) => {
-        return (
-          <HeroCard
-            key={i}
-            name={heroes[i].name}
-            images={heroes[i].images.lg}
-            onFlipped={onFlipped}
-          />
-        );
-      })}
-    </ScrollBox>
-  );
-};
-
-export const FlippedCardList = ({ heroes, onFlipped }) => {
-  return (
-    <ScrollBox>
-      {" "}
-      {heroes.map((user, i) => {
-        return (
+        return !onFlipped ? (
+          <div>
+            <HeroCard
+              key={i}
+              name={heroes[i].name}
+              images={heroes[i].images.lg}
+              onFlipped={onFlipped}
+            />
+          </div>
+        ) : (
           <FlippedCard
             key={i}
             name={heroes[i].name}
@@ -44,6 +34,26 @@ export const FlippedCardList = ({ heroes, onFlipped }) => {
           />
         );
       })}
+      )}
     </ScrollBox>
   );
 };
+
+//export const FlippedCardList = ({ heroes, onFlipped }) => {
+//  return (
+//    <ScrollBox>
+//      {" "}
+//      {heroes.map((user, i) => {
+//        return (
+//          <FlippedCard
+//            key={i}
+//            name={heroes[i].name}
+//            appearance={heroes[i].appearance}
+//            biography={heroes[i].biography}
+//            onFlipped={onFlipped}
+//          />
+//        );
+//      })}
+//    </ScrollBox>
+//  );
+//};

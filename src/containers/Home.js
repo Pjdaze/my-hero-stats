@@ -52,17 +52,10 @@ class App extends React.Component {
           <h1>Find Your Hero</h1>
         </header>
         <SearchBox searchChange={this.onSearchChange} />
-        {!flipped ? (
-          <HeroCardList
-            onFlipped={this.handleClick}
-            heroes={findHeroe.slice(0, 12)}
-          />
-        ) : (
-          <FlippedCardList
-            onFlipped={this.handleClick}
-            heroes={findHeroe.slice(0, 12)}
-          />
-        )}
+        <HeroCardList
+          onFlipped={this.handleClick}
+          heroes={findHeroe.slice(0, 12)}
+        />
       </HomeWrap>
     );
   }
