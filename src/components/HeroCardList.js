@@ -11,17 +11,17 @@ import FlippedCard from "./FlippedCard";
 //  }
 //};
 
-export const HeroCardList = ({ heroes, onFlipped }) => {
+export const HeroCardList = ({ heroes, handleClick, flipped }) => {
   return (
     <ScrollBox>
       {heroes.map((user, i) => {
-        return !onFlipped ? (
+        return !flipped ? (
           <div>
             <HeroCard
               key={i}
               name={heroes[i].name}
               images={heroes[i].images.lg}
-              onFlipped={onFlipped}
+              handleClick={handleClick}
             />
           </div>
         ) : (
@@ -30,11 +30,10 @@ export const HeroCardList = ({ heroes, onFlipped }) => {
             name={heroes[i].name}
             appearance={heroes[i].appearance}
             biography={heroes[i].biography}
-            onFlipped={onFlipped}
+            handleClick={handleClick}
           />
         );
       })}
-      )}
     </ScrollBox>
   );
 };

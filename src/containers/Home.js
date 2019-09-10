@@ -1,9 +1,7 @@
 import React from "react";
 import HomeWrap from "../Wrappers/HomeWrap";
-import { heroes } from "../fake_data/Heroes";
 import SearchBox from "../components/SearchBox";
-import { HeroCardList, FlippedCardList } from "../components/HeroCardList";
-import ScrollBox from "../components/ScrollBox";
+import { HeroCardList } from "../components/HeroCardList";
 
 class App extends React.Component {
   constructor(props) {
@@ -52,10 +50,7 @@ class App extends React.Component {
           <h1>Find Your Hero</h1>
         </header>
         <SearchBox searchChange={this.onSearchChange} />
-        <HeroCardList
-          onFlipped={this.handleClick}
-          heroes={findHeroe.slice(0, 12)}
-        />
+        <HeroCardList heroes={findHeroe.slice(0, 12)} />
       </HomeWrap>
     );
   }
