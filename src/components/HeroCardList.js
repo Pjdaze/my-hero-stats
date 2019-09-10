@@ -11,7 +11,7 @@ import FlippedCard from "./FlippedCard";
 //  }
 //};
 
-export const HeroCardList = ({ heroes, handleClick, flipped }) => {
+export const HeroCardList = ({ heroes, handleClick }) => {
   return (
     <ScrollBox>
       {heroes.map((user, i) => {
