@@ -1,7 +1,7 @@
 import React from "react";
 import HeroCard from "../components/HeroCard";
 import ScrollBox from "./ScrollBox";
-import FlippedCard from "./FlippedCard";
+import FlippedCard from "../components/FlippedCard";
 
 //const ManageMembers = function(member) {
 //  if (!member.length) {
@@ -11,27 +11,27 @@ import FlippedCard from "./FlippedCard";
 //  }
 //};
 
-export const HeroCardList = ({ heroes, handleClick }) => {
+export const HeroCardList = ({ heroes, onFlip }) => {
   return (
     <ScrollBox>
       {heroes.map((user, i) => {
-        return !flipped ? (
-          <div>
+        return (
+          (
+            <FlippedCard
+              key={i}
+              name={heroes[i].name}
+              appearance={heroes[i].appearance}
+              biography={heroes[i].biography}
+              onFlip={onFlip}
+            />
+          ) && (
             <HeroCard
               key={i}
               name={heroes[i].name}
               images={heroes[i].images.lg}
-              handleClick={handleClick}
+              onFlip={onFlip}
             />
-          </div>
-        ) : (
-          <FlippedCard
-            key={i}
-            name={heroes[i].name}
-            appearance={heroes[i].appearance}
-            biography={heroes[i].biography}
-            handleClick={handleClick}
-          />
+          )
         );
       })}
     </ScrollBox>
