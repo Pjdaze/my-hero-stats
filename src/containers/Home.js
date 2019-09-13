@@ -39,6 +39,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state.flipped);
     const { heroes, searchField } = this.state;
 
     const findHeroe = heroes.filter(x =>
@@ -51,6 +52,7 @@ class App extends React.Component {
           {" "}
           <h1>Find Your Hero</h1>
         </header>
+
         <SearchBox searchChange={this.onSearchChange} />
         <HeroCardList
           onFlip={this.handleClick}

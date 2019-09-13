@@ -14,9 +14,18 @@ import FlippedCard from "../components/FlippedCard";
 export const HeroCardList = ({ heroes, onFlip }) => {
   return (
     <ScrollBox>
-      {heroes.map((user, i) => {
-        return (
-          (
+      {heroes.map((x, i) => {
+        if (onFlip) {
+          return (
+            <HeroCard
+              key={i}
+              name={heroes[i].name}
+              images={heroes[i].images.lg}
+              onFlip={onFlip}
+            />
+          );
+        } else {
+          return (
             <FlippedCard
               key={i}
               name={heroes[i].name}
@@ -24,15 +33,8 @@ export const HeroCardList = ({ heroes, onFlip }) => {
               biography={heroes[i].biography}
               onFlip={onFlip}
             />
-          ) && (
-            <HeroCard
-              key={i}
-              name={heroes[i].name}
-              images={heroes[i].images.lg}
-              onFlip={onFlip}
-            />
-          )
-        );
+          );
+        }
       })}
     </ScrollBox>
   );
