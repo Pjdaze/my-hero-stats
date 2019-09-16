@@ -3,7 +3,6 @@ import HomeWrap from "../Wrappers/HomeWrap";
 import SearchBox from "../components/SearchBox";
 import { HeroCardList } from "../components/HeroCardList";
 import HeroCard from "../components/HeroCard";
-import FlippedCard from "../components/FlippedCard";
 
 class App extends React.Component {
   constructor(props) {
